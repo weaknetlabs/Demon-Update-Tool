@@ -56,6 +56,7 @@ else
         do # run the script:
           log "Running update level: $DUT_NEXT_LEVEL"
           DUT_LEVEL_MD5=$(md5sum ${DUT_LEVELS}/${DUT_NEXT_LEVEL}.sh|awk '{print $1}')
+          chmod +x ${DUT_LEVELS}/${DUT_NEXT_LEVEL}.sh # make sure we have execute permissions
           ${DUT_LEVELS}/${DUT_NEXT_LEVEL}.sh $DUT_LEVEL_MD5
           if [[ $? -eq 0 ]]
             then

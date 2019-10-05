@@ -34,8 +34,9 @@ find /usr/share/fonts -iname '*.ttf' -type f -exec sudo chmod -v 644 {} \; 2>&1>
 find /usr/share/fonts -iname '*.otf' -type f -exec sudo chmod -v 644 {} \; 2>&1>/dev/null
 sudo fc-cache -r -v 2>&1>/dev/null
 #$$$ get new wallpapers:
-cd /usr/share/demon/images/wallpapers/ && wget $DEMON_URL/images/wallpapers/halloween-2019-color.png
-cd /usr/share/demon/images/wallpapers/ && wget $DEMON_URL/images/wallpapers/halloween-2019.png
+mkdir -p /usr/share/demon/images/wallpaper/ 2>/dev/null
+cd /usr/share/demon/images/wallpaper/ && wget $DEMON_URL/images/wallpapers/halloween-2019-color.png
+cd /usr/share/demon/images/wallpaper/ && wget $DEMON_URL/images/wallpapers/halloween-2019.png
 #$$$ Fix the PulseAudio autostart issue:
 mkdir -p /root/.config/autostart/
 DF=/root/.config/autostart/pulseaudio.desktop

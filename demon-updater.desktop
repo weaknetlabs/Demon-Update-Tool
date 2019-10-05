@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Demon Update Tool
+Comment=Install all updates for the Demon in a single place
+Exec=gnome-terminal -e "bash -c \"demon-updater.sh;bash\""
+Icon=/usr/share/demon/images/icons/updater.png
+StartupNotify=false
+Categories=demonlinux

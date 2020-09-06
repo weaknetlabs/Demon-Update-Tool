@@ -29,14 +29,15 @@ log "Hello. I have initialized"
 #============================================================#
 #$$$ Fix the UI House of Cards issue with XFCE4:
 apt update >/dev/null
-apt thunar-data thunar
+apt remove thunar-data thunar -y
 mkdir /tmp/updater
 cd /tmp/updater && wget http://ftp.us.debian.org/debian/pool/main/t/thunar/libthunarx-2-0_1.6.11-1_amd64.deb
 cd /tmp/updater && wget http://ftp.us.debian.org/debian/pool/main/t/thunar/thunar-data_1.6.11-1_all.deb
 cd /tmp/updater && wget http://deb.debian.org/debian/pool/main/t/thunar/thunar_1.6.11-1.debian.tar.xz
-dpkg install thunar-data_1.6.11-1_all.deb
-dpkg install libthunarx-2-0_1.6.11-1_amd64.deb
-dpkg install thunar_1.6.11-1_amd64.deb
+dpkg -i thunar-data_1.6.11-1_all.deb
+dpkg -i libthunarx-2-0_1.6.11-1_amd64.deb
+dpkg -i thunar_1.6.11-1_amd64.deb
+apt -f install
 #$$$ Make a couple new Dekstop icons:
 wget https://demonlinux.com/download/files/images/icons/offsec.png -O /usr/share/demon/images/icons/offsec.png
 wget https://demonlinux.com/download/files/desktop/provinggrounds.desktop -O /root/Desktop/provinggrounds.desktop
